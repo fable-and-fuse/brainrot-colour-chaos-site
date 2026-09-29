@@ -41,7 +41,7 @@ The studio logo is resized square and uncropped, with its transparency kept (`fa
 
 Every push to `main` runs `.github/workflows/deploy.yml`, which uploads `site/` and deploys it to GitHub Pages. In **Settings → Pages**, the source must be set to **GitHub Actions**.
 
-Live URL: <https://reevegibsone-cmyk.github.io/brainrot-colour-chaos-site/>
+Live URL: <https://fable-and-fuse.github.io/brainrot-colour-chaos-site/>
 
 If the site moves to a custom domain, update the `canonical` and `og:` URLs in `site/index.html`.
 
