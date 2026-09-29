@@ -721,12 +721,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .site-footer__text { display: grid; gap: 6px; }
 .site-footer__text strong { color: var(--text); }
 .site-footer__logo {
-  width: 136px;
-  padding: 8px;
-  background: var(--cream);
-  border-radius: var(--radius-m);
-  box-shadow: 0 0 0 3px var(--violet);
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
 }
+@media (min-width: 760px) { .site-footer__logo { width: 260px; } }
 .site-footer__legal { font-size: .85rem; margin-top: 8px; }
 @media (min-width: 760px) {
   .site-footer__inner { grid-template-columns: auto 1fr; justify-items: start; text-align: left; gap: 32px; align-items: center; }

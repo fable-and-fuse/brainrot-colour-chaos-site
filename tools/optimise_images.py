@@ -5,7 +5,7 @@ web-sized WebP/PNG/JPEG derivatives into site/assets/img. Originals are
 never modified. Requires Pillow (`pip install pillow`).
 
 Usage:
-    python tools/optimise_images.py [path-to-source-assets]
+    python tools/optimise_images.py [path-to-source-assets] [path-to-master-logo]
 """
 import sys
 from pathlib import Path
@@ -26,8 +26,13 @@ JOBS = {
     "04_Capuchino_Assassino_149.png": ("page-149-capuchino-assassino", [640, 1400], 82),
     "05_Character_Checklist.png": ("character-checklist", [720, 1400], 82),
     "06_Ruotino_Full_Colour_Artwork.png": ("ruotino-colour-inspiration", [800, 1600], 84),
-    "Fable_and_Fuse_Studios_Final_Master_Logo_2.png": ("fable-and-fuse-logo", [240, 480], 88),
 }
+
+# Studio master logo (square 1344x1344 RGBA). Kept square and uncropped so the
+# full artwork and its transparency are preserved.
+LOGO_SRC = Path(sys.argv[2]) if len(sys.argv) > 2 else Path.home() / "Pictures" / "Fable_and_Fuse_Studios_Final_Master_Logo.png"
+LOGO_STEM = "fable-and-fuse-studios-logo-v2"
+LOGO_WIDTHS = [320, 640]
 
 
 def resize(im: Image.Image, width: int) -> Image.Image:
@@ -62,9 +67,13 @@ def main() -> None:
         canvas.paste(fitted, ((1200 - fitted.width) // 2, 20))
         canvas.save(OUT.parent / "og-image.jpg", "JPEG", quality=86, optimize=True, progressive=True)
 
-    # Favicons from the studio logo.
-    with Image.open(SRC / "Fable_and_Fuse_Studios_Final_Master_Logo_2.png") as logo:
+    # Studio logo derivatives and favicons.
+    with Image.open(LOGO_SRC) as logo:
         logo = logo.convert("RGBA")
+        for w in LOGO_WIDTHS:
+            dst = OUT / f"{LOGO_STEM}-{w}.webp"
+            logo.resize((w, w), Image.LANCZOS).save(dst, "WEBP", quality=90, alpha_quality=100, method=6)
+            print(f"{dst.name:48} {dst.stat().st_size // 1024:>5} KB")
         logo.resize((180, 180), Image.LANCZOS).save(OUT.parent / "apple-touch-icon.png", optimize=True)
         logo.resize((64, 64), Image.LANCZOS).save(OUT.parent / "favicon.png", optimize=True)
 

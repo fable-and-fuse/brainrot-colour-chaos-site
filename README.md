@@ -32,8 +32,10 @@ Then open <http://localhost:8000>. Serve the folder over HTTP rather than openin
 
 ```bash
 pip install pillow
-python tools/optimise_images.py "path/to/website_package/assets"
+python tools/optimise_images.py "path/to/website_package/assets" "path/to/Fable_and_Fuse_Studios_Final_Master_Logo.png"
 ```
+
+The studio logo is resized square and uncropped, with its transparency kept (`fable-and-fuse-studios-logo-v2-*.webp`). If the logo changes, bump the `-v2` suffix in `tools/optimise_images.py` and `site/index.html` so browsers don't keep serving a cached copy of the old one.
 
 ## Deployment
 
