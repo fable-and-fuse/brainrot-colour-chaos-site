@@ -178,7 +178,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .site-nav { display: none; }
 .nav-cta__long { display: none; }
 
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .site-nav { display: block; }
   .site-nav ul { display: flex; gap: 4px; }
   .site-nav a {
@@ -189,6 +189,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     font-size: .98rem;
     padding: .5em .8em;
     border-radius: 999px;
+    white-space: nowrap;
     transition: background-color .15s ease, color .15s ease;
   }
   .site-nav a:hover { background: rgb(216 255 49 / .12); color: var(--lime); }
@@ -708,6 +709,53 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .qr__label { font-weight: 800; font-size: 1.1rem; color: var(--cream); }
 .qr__fallback { font-size: .95rem; color: var(--text-muted); }
 .qr__fallback a { font-weight: 700; overflow-wrap: anywhere; }
+
+/* J. Contact */
+.section--contact {
+  background: linear-gradient(180deg, #170a3e 0%, var(--ink) 100%);
+  padding-top: 0;
+}
+.contact {
+  display: grid;
+  gap: 28px;
+  padding: 32px 22px;
+  border-radius: var(--radius-l);
+  background: var(--ink-3);
+  border: 3px solid var(--cyan);
+  box-shadow: 6px 6px 0 var(--cyan);
+}
+.contact__head { margin: 0; }
+.contact__actions { display: grid; gap: 20px; justify-items: start; }
+.contact__email { display: grid; gap: 4px; min-width: 0; max-width: 100%; }
+.contact__email-label {
+  font-weight: 800;
+  font-size: .85rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+.contact__email a {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.05rem, 4.6vw, 1.6rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.contact .btn {
+  width: 100%;
+  max-width: 380px;
+  padding-inline: 1em;
+  font-size: clamp(.98rem, 3.6vw, 1.08rem);
+}
+@media (min-width: 960px) {
+  .contact {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 56px;
+    padding: 56px;
+  }
+  .contact__head { justify-items: start; text-align: left; }
+}
 
 /* I. Footer */
 .site-footer {
