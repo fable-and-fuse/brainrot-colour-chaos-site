@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Switchboard | Claude Code + Gemini developer toolkit</title>
+  <meta name="description" content="Switchboard v1.0.0 by Fable & Fuse Studios: a downloadable toolkit that gives Claude Code a second model, Gemini, for research and reviews, with a hook that keeps API keys out of the transcript. US$29, one-time.">
+  <meta name="author" content="Fable &amp; Fuse Studios">
+  <meta name="theme-color" content="#091126">
+  <link rel="canonical" href="https://fable-and-fuse.github.io/brainrot-colour-chaos-site/switchboard/">
+
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="Fable &amp; Fuse Studios">
+  <meta property="og:title" content="Switchboard: Claude Code + Gemini developer toolkit">
+  <meta property="og:description" content="Give Claude Code a second model without leaking your keys. Downloadable toolkit, US$29 one-time.">
+  <meta property="og:url" content="https://fable-and-fuse.github.io/brainrot-colour-chaos-site/switchboard/">
+  <meta property="og:locale" content="en_AU">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,800&display=swap">
+  <link rel="stylesheet" href="switchboard.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="../" aria-label="Fable &amp; Fuse Studios home">
+        <img src="../assets/img/fable-and-fuse-studios-logo-v2-320.webp" width="40" height="40" alt="">
+        <span>Fable &amp; Fuse Studios</span>
+      </a>
+      <nav aria-label="Switchboard">
+        <a href="#included">What's included</a>
+        <a href="#requirements">Requirements</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--small js-buy" href="#buy">Buy Switchboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <p class="eyebrow">Developer toolkit · v1.0.0 · Download</p>
+          <h1>Switchboard</h1>
+          <p class="lede">Give Claude Code a second model without leaking your keys.</p>
+          <p>A tested Python broker, a Claude Code subagent, two slash commands and a secret-guard hook that put Gemini to work on research and reviews while Claude stays in charge.</p>
+          <div class="hero__cta">
+            <a class="btn btn--large js-buy" href="#buy">Buy Switchboard · US$29</a>
+            <a class="btn btn--ghost" href="#included">See what's included</a>
+          </div>
+          <p class="fine">One-time purchase. Downloadable code and configuration for your own repo, not a hosted service. 14-day refund.</p>
+        </div>
+
+        <figure class="diagram" aria-labelledby="diagram-cap">
+          <svg viewBox="0 0 440 330" role="img" aria-labelledby="diagram-title diagram-desc">
+            <title id="diagram-title">How Switchboard fits together</title>
+            <desc id="diagram-desc">Claude Code stays the primary agent. It hands research and review tasks through the Switchboard broker to Gemini, and the guard_secrets hook sits between the agent and your API keys.</desc>
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0L10 5L0 10z" fill="#c6c9e6"/>
+              </marker>
+            </defs>
+            <rect x="20" y="24" width="170" height="76" rx="14" class="node node--claude"/>
+            <text x="105" y="56" class="t-strong">Claude Code</text>
+            <text x="105" y="78" class="t-small">primary agent</text>
+
+            <rect x="250" y="24" width="170" height="76" rx="14" class="node node--gemini"/>
+            <text x="335" y="56" class="t-strong">Gemini</text>
+            <text x="335" y="78" class="t-small">research · long docs · review</text>
+
+            <rect x="110" y="150" width="220" height="86" rx="14" class="node node--broker"/>
+            <text x="220" y="182" class="t-strong">Switchboard broker</text>
+            <text x="220" y="204" class="t-small">fallback · backoff · quota breaker</text>
+            <text x="220" y="222" class="t-small">usage log · JSON · grounding</text>
+
+            <path d="M105 100 L160 150" class="edge" marker-end="url(#arrow)"/>
+            <path d="M280 150 L335 100" class="edge" marker-end="url(#arrow)"/>
+
+            <rect x="20" y="262" width="400" height="48" rx="12" class="node node--guard"/>
+            <text x="220" y="291" class="t-strong t-guard">guard_secrets hook: keys stay out of the transcript</text>
+          </svg>
+          <figcaption id="diagram-cap">Claude delegates; Gemini answers; Claude verifies before you see it.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Problems -->
+    <section class="section">
+      <div class="wrap narrow">
+        <h2>Why a second model needs more than an API call</h2>
+        <p>For some jobs a second model helps: reading a 300-page spec, checking what changed in a library last month, running research tracks in parallel, or getting an independent review before you merge. Wiring one up sounds easy until it breaks:</p>
+        <ul class="ticks ticks--warn">
+          <li>the model ID you hard-coded gets retired and starts returning 404;</li>
+          <li>"high demand" 503s stall your agent for minutes;</li>
+          <li>a retry loop on a quota error burns the rest of your daily allowance;</li>
+          <li>a thinking model spends its whole output budget on reasoning and returns an empty string;</li>
+          <li>your agent helpfully runs <code>echo $GEMINI_API_KEY</code> to "check it's set".</li>
+        </ul>
+        <p>Switchboard handles each of these.</p>
+      </div>
+    </section>
+
+    <!-- Included -->
+    <section class="section section--alt" id="included" aria-labelledby="included-title">
+      <div class="wrap">
+        <h2 id="included-title">What's included</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Gemini broker</h3>
+            <p>Python, one dependency (<code>httpx</code>). Concurrency limits, jittered backoff with Retry-After, a model fallback chain, a quota circuit breaker, classified errors, per-call usage telemetry, optional Google Search grounding and JSON mode. Cost is calculated only from prices you've verified; it never guesses.</p>
+            <p class="card__meta">CLI: <code>selftest</code> · <code>models</code> · <code>ask</code> · <code>run</code> · <code>route</code> · <code>usage</code></p>
+          </article>
+          <article class="card">
+            <h3><code>gemini-researcher</code> subagent</h3>
+            <p>A Claude Code subagent that Claude delegates research to.</p>
+          </article>
+          <article class="card">
+            <h3><code>/research</code></h3>
+            <p>Runs 2–4 grounded research tracks in parallel; Claude synthesises them.</p>
+          </article>
+          <article class="card">
+            <h3><code>/second-opinion</code></h3>
+            <p>An independent Gemini review of a diff, file or plan. Claude verifies each finding before you see it.</p>
+          </article>
+          <article class="card">
+            <h3><code>guard_secrets</code> hook</h3>
+            <p>A PreToolUse hook that blocks the agent from echoing secret environment variables, dumping the environment, reading <code>.env</code> files or writing live-looking keys into code.</p>
+          </article>
+          <article class="card">
+            <h3>CLAUDE.md template</h3>
+            <p>Teaches Claude when to use Gemini, and to treat its output as input to check, not as fact.</p>
+          </article>
+          <article class="card">
+            <h3>Scripts</h3>
+            <p>A non-destructive installer, a pre-commit secret scanner, and hidden-input key setup for Windows (PowerShell) and macOS/Linux.</p>
+          </article>
+          <article class="card">
+            <h3>Tests and docs</h3>
+            <p>42 offline tests (retry, fallback, quota breaker, retired models, key-never-logged, hook rules, installer), plus a quickstart, a troubleshooting guide organised by error, and the hook's limits.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fit + requirements -->
+    <section class="section" id="requirements" aria-labelledby="req-title">
+      <div class="wrap two-col">
+        <div>
+          <h2 id="req-title">Requirements</h2>
+          <ul class="ticks">
+            <li>Python 3.10+ and <code>httpx</code></li>
+            <li>Claude Code</li>
+            <li>A Gemini API key (you supply it; Google sets the quotas)</li>
+            <li>Tested on Windows 11; designed for macOS and Linux</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Who it's for</h2>
+          <p>Developers already using Claude Code who have, or are happy to get, a Gemini API key, and want more from both without building and debugging the glue themselves.</p>
+          <h3 class="h-sub">Not for you if…</h3>
+          <ul class="ticks ticks--muted">
+            <li>you want a hosted product or a GUI: this is code and config for your repo;</li>
+            <li>you need guaranteed Gemini capacity: Switchboard handles quota errors gracefully but can't create more quota.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buy -->
+    <section class="section section--buy" id="buy" aria-labelledby="buy-title">
+      <div class="wrap">
+        <div class="buy">
+          <div>
+            <p class="eyebrow">Switchboard v1.0.0</p>
+            <h2 id="buy-title">US$29, one-time</h2>
+            <ul class="ticks">
+              <li>Download: <code>switchboard-1.0.0.zip</code></li>
+              <li>Single-developer licence for unlimited personal and client projects</li>
+              <li>Version updates delivered to the same download</li>
+              <li>14-day refund if it doesn't work for you</li>
+            </ul>
+          </div>
+          <div class="buy__action">
+            <a class="btn btn--large js-buy" href="#buy" data-checkout>Buy Switchboard</a>
+            <p class="fine js-checkout-note">Checkout opens soon. Email <a href="mailto:FableFuseStudios@proton.me?subject=Switchboard">FableFuseStudios@proton.me</a> to be told when it's live.</p>
+            <p class="fine">Checkout, payment and download delivery are handled by <a href="https://polar.sh" rel="noopener">Polar</a>, which sells Switchboard as our reseller and merchant of record, including sales tax.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <h2 id="faq-title">FAQ</h2>
+        <details>
+          <summary>Does it work without Gemini?</summary>
+          <p>Yes. Without a key, or when your quota runs out, the commands say Gemini is unavailable and Claude carries on with its own tools.</p>
+        </details>
+        <details>
+          <summary>Will it run up my Gemini bill?</summary>
+          <p>Every call is logged with token counts (<code>python -m switchboard usage</code>). Concurrency is capped, retries are bounded, and quota errors stop calls instead of retrying. Set billing alerts in Google Cloud as well.</p>
+        </details>
+        <details>
+          <summary>Does the hook make key leaks impossible?</summary>
+          <p>No. It blocks the common ways an agent exposes a key, which makes it a seatbelt, not a vault. The included docs explain what it covers and what to layer with it.</p>
+        </details>
+        <details>
+          <summary>What can I do with it? (licence)</summary>
+          <p>Use and modify it in any number of your own projects, personal or commercial, including work for clients, and ship the code inside those projects. You may not resell or redistribute the kit on its own (as a template, starter kit or course material), or publish its source on its own. Each developer needs their own licence; for a team licence, email us. Provided "as is" without warranty; you're responsible for your own API keys, usage and provider costs. The full licence is in the download.</p>
+        </details>
+        <details>
+          <summary>How do refunds work?</summary>
+          <p>If Switchboard doesn't work for you within 14 days of purchase, email <a href="mailto:FableFuseStudios@proton.me?subject=Switchboard%20refund">FableFuseStudios@proton.me</a> and you'll get a full refund.</p>
+        </details>
+        <details>
+          <summary>Who makes it?</summary>
+          <p>Switchboard is made and published by Fable &amp; Fuse Studios. Support: <a href="mailto:FableFuseStudios@proton.me?subject=Switchboard%20support">FableFuseStudios@proton.me</a>.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <p><a href="../">Fable &amp; Fuse Studios</a> · <a href="mailto:FableFuseStudios@proton.me">FableFuseStudios@proton.me</a></p>
+      <p>© 2026 Fable &amp; Fuse Studios. Switchboard is not affiliated with or endorsed by Anthropic or Google. Claude and Gemini are trademarks of their respective owners.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Checkout link ─────────────────────────────────────────────────────────
+    // OWNER: paste the Polar checkout URL between the quotes, e.g. "https://buy.polar.sh/polar_cl_…".
+    // Leave it empty until the Polar product exists; the buttons then scroll to #buy and show "Checkout opens soon".
+    const POLAR_CHECKOUT_URL = "";
+    // ─────────────────────────────────────────────────────────────────────────
+    if (/^https:\/\/([a-z0-9-]+\.)*polar\.sh\//.test(POLAR_CHECKOUT_URL)) {
+      document.querySelectorAll(".js-buy").forEach(a => { a.href = POLAR_CHECKOUT_URL; a.rel = "noopener"; });
+      document.querySelectorAll(".js-checkout-note").forEach(n => n.hidden = true);
+    }
+  </script>
+</body>
+</html>
