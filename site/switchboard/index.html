@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Switchboard | Claude Code + Gemini developer toolkit</title>
-  <meta name="description" content="Switchboard v1.0.0 by Fable & Fuse Studios: a downloadable toolkit that gives Claude Code a second model, Gemini, for research and reviews, with a hook that keeps API keys out of the transcript. US$29, one-time.">
+  <meta name="description" content="Switchboard v1.0.1 by Fable & Fuse Studios: a downloadable toolkit that gives Claude Code a second model, Gemini, for research and reviews, with a hook that keeps API keys out of the transcript. US$29, one-time.">
   <meta name="author" content="Fable &amp; Fuse Studios">
   <meta name="theme-color" content="#091126">
   <link rel="canonical" href="https://fable-and-fuse.github.io/brainrot-colour-chaos-site/switchboard/">
@@ -42,7 +42,7 @@
         <a href="#included">What's included</a>
         <a href="#requirements">Requirements</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn--small js-buy" href="#buy">Buy Switchboard</a>
+        <a class="btn btn--small js-buy" href="https://buy.polar.sh/polar_cl_zSlsFoLeeate2JaOHz8kFUtFZoUTAhcPUUdpy2QWeY4" rel="noopener">Buy Switchboard</a>
       </nav>
     </div>
   </header>
@@ -52,14 +52,15 @@
     <section class="hero">
       <div class="wrap hero__grid">
         <div>
-          <p class="eyebrow">Developer toolkit · v1.0.0 · Download</p>
+          <p class="eyebrow">Developer toolkit · v1.0.1 · Download</p>
           <h1>Switchboard</h1>
           <p class="lede">Give Claude Code a second model without leaking your keys.</p>
           <p>A tested Python broker, a Claude Code subagent, two slash commands and a secret-guard hook that put Gemini to work on research and reviews while Claude stays in charge.</p>
           <div class="hero__cta">
-            <a class="btn btn--large js-buy" href="#buy">Buy Switchboard · US$29</a>
+            <a class="btn btn--large js-buy" href="https://buy.polar.sh/polar_cl_zSlsFoLeeate2JaOHz8kFUtFZoUTAhcPUUdpy2QWeY4" rel="noopener">Buy Switchboard · US$29</a>
             <a class="btn btn--ghost" href="#included">See what's included</a>
           </div>
+          <p class="fine">Launch offer: code <code>LAUNCH10</code> takes 34.5% off at checkout until 21 October 2026 (first 50 buyers).</p>
           <p class="fine">One-time purchase. Downloadable code and configuration for your own repo, not a hosted service. 14-day refund.</p>
         </div>
 
@@ -160,7 +161,7 @@
           </article>
           <article class="card">
             <h3>Tests and docs</h3>
-            <p>42 offline tests (retry, fallback, quota breaker, retired models, key-never-logged, hook rules, installer), plus a quickstart, a troubleshooting guide organised by error, and the hook's limits.</p>
+            <p>57 offline tests (retry, fallback, quota breaker, retired models, key-never-logged, hook rules, installer), plus a quickstart, a troubleshooting guide organised by error, and the hook's limits.</p>
           </article>
         </div>
       </div>
@@ -195,18 +196,18 @@
       <div class="wrap">
         <div class="buy">
           <div>
-            <p class="eyebrow">Switchboard v1.0.0</p>
+            <p class="eyebrow">Switchboard v1.0.1</p>
             <h2 id="buy-title">US$29, one-time</h2>
             <ul class="ticks">
-              <li>Download: <code>switchboard-1.0.0.zip</code></li>
+              <li>Download: <code>switchboard-1.0.1.zip</code></li>
               <li>Single-developer licence for unlimited personal and client projects</li>
               <li>Version updates delivered to the same download</li>
               <li>14-day refund if it doesn't work for you</li>
             </ul>
           </div>
           <div class="buy__action">
-            <a class="btn btn--large js-buy" href="#buy" data-checkout>Buy Switchboard</a>
-            <p class="fine js-checkout-note">Checkout opens soon. Email <a href="mailto:FableFuseStudios@proton.me?subject=Switchboard">FableFuseStudios@proton.me</a> to be told when it's live.</p>
+            <a class="btn btn--large js-buy" href="https://buy.polar.sh/polar_cl_zSlsFoLeeate2JaOHz8kFUtFZoUTAhcPUUdpy2QWeY4" rel="noopener" data-checkout>Buy Switchboard</a>
+            <p class="fine">Launch offer: enter code <code>LAUNCH10</code> at checkout for 34.5% off (about US$19). Limited to the first 50 buyers, until 21 October 2026.</p>
             <p class="fine">Checkout, payment and download delivery are handled by <a href="https://polar.sh" rel="noopener">Polar</a>, which sells Switchboard as our reseller and merchant of record, including sales tax.</p>
           </div>
         </div>
@@ -254,9 +255,8 @@
 
   <script>
     // ── Checkout link ─────────────────────────────────────────────────────────
-    // OWNER: paste the Polar checkout URL between the quotes, e.g. "https://buy.polar.sh/polar_cl_…".
-    // Leave it empty until the Polar product exists; the buttons then scroll to #buy and show "Checkout opens soon".
-    const POLAR_CHECKOUT_URL = "";
+    // Live Polar checkout. The Buy links also carry it in their href, so they work without JavaScript.
+    const POLAR_CHECKOUT_URL = "https://buy.polar.sh/polar_cl_zSlsFoLeeate2JaOHz8kFUtFZoUTAhcPUUdpy2QWeY4";
     // ─────────────────────────────────────────────────────────────────────────
     if (/^https:\/\/([a-z0-9-]+\.)*polar\.sh\//.test(POLAR_CHECKOUT_URL)) {
       document.querySelectorAll(".js-buy").forEach(a => { a.href = POLAR_CHECKOUT_URL; a.rel = "noopener"; });
