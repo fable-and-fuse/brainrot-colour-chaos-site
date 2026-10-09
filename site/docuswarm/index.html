@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DocuSwarm QA | Documentation QA for developer tools</title>
+  <meta name="description" content="DocuSwarm QA by Fable &amp; Fuse Studios: fixed-price documentation audits for developer-tool docs. Every broken link and dead anchor, confirmed against your live site, with a ready-to-merge fix PR. From US$149.">
+  <meta name="author" content="Fable &amp; Fuse Studios">
+  <meta name="theme-color" content="#091126">
+  <link rel="canonical" href="https://fable-and-fuse.github.io/brainrot-colour-chaos-site/docuswarm/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fable &amp; Fuse Studios">
+  <meta property="og:title" content="DocuSwarm QA: documentation QA for developer tools">
+  <meta property="og:description" content="Every broken link and dead anchor in your docs, confirmed against the live site, fixed in one PR. Fixed price from US$149.">
+  <meta property="og:url" content="https://fable-and-fuse.github.io/brainrot-colour-chaos-site/docuswarm/">
+  <meta property="og:locale" content="en_AU">
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,800&display=swap">
+  <link rel="stylesheet" href="../switchboard/switchboard.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="../" aria-label="Fable &amp; Fuse Studios home">
+        <img src="../assets/img/fable-and-fuse-studios-logo-v2-320.webp" width="40" height="40" alt="">
+        <span>Fable &amp; Fuse Studios</span>
+      </a>
+      <nav aria-label="DocuSwarm QA">
+        <a href="#proof">Proof</a>
+        <a href="#packages">Packages</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--small" href="mailto:FableFuseStudios@proton.me?subject=DocuSwarm%20QA%20audit">Request an audit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap narrow">
+        <p class="eyebrow">Service · Fixed price · Developer-tool docs</p>
+        <h1>DocuSwarm QA</h1>
+        <p class="lede">Every broken link in your docs, confirmed on your live site and fixed in one PR.</p>
+        <p>Docs rot quietly. A heading gets renamed and six pages now link to an anchor that no longer exists, so readers land at the top of the wrong page. Nobody files a bug; they just leave. DocuSwarm QA finds these, checks each one by loading your published site, and hands you the fixes.</p>
+        <div class="hero__cta">
+          <a class="btn btn--large" href="mailto:FableFuseStudios@proton.me?subject=DocuSwarm%20QA%20audit">Request an audit · from US$149</a>
+          <a class="btn btn--ghost" href="#packages">See packages</a>
+        </div>
+        <p class="fine">Send your docs repo URL. You get a quote up front and pay only after you accept it.</p>
+      </div>
+    </section>
+
+    <section class="section" id="proof" aria-labelledby="proof-title">
+      <div class="wrap narrow">
+        <h2 id="proof-title">Public work you can check</h2>
+        <ul class="ticks">
+          <li><strong>Prefect</strong>: docs anchor-fix PR reviewed and merged by a maintainer, October 2026. <a href="https://github.com/PrefectHQ/prefect/pull/23331" rel="noopener">PrefectHQ/prefect#23331</a></li>
+          <li><strong>Firecrawl</strong>: docs link-fix PR, open for review. <a href="https://github.com/firecrawl/firecrawl-docs/pull/1539" rel="noopener">firecrawl/firecrawl-docs#1539</a></li>
+          <li><strong>Portkey</strong>: docs link-fix PR, open for review. <a href="https://github.com/Portkey-AI/docs-core/pull/1106" rel="noopener">Portkey-AI/docs-core#1106</a></li>
+        </ul>
+        <p>Typical findings on Mintlify and MkDocs sites: anchors renamed after a heading edit, steps renumbered in a quickstart, pages that link to sections in another page that were moved, and translated pages pointing at English anchors that don't exist in the translation.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>1. Scan the source</h3>
+            <p>Every Markdown/MDX page in your docs repo: internal links, cross-page anchors, images, code-block syntax (Python, JSON, YAML, TOML), unclosed fences and leftover TODOs.</p>
+          </article>
+          <article class="card">
+            <h3>2. Confirm on the live site</h3>
+            <p>Each link is checked against your published pages, using your docs platform's real anchor IDs. Findings that work live are dropped, so the report holds only real breaks.</p>
+          </article>
+          <article class="card">
+            <h3>3. Fix and guard</h3>
+            <p>One PR with the unambiguous fixes, grouped by type so it reviews quickly, plus a GitHub Action that fails only PRs that introduce <em>new</em> breaks. The existing backlog never blocks you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="packages" aria-labelledby="packages-title">
+      <div class="wrap">
+        <h2 id="packages-title">Packages</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Audit · US$149</h3>
+            <p>The full report: every finding with file, line and reason, each checked by hand and against your live site, with suggested fixes where the right target is clear. Up to 150 pages. Delivered in 2 business days.</p>
+          </article>
+          <article class="card">
+            <h3>Audit + Fix · US$349</h3>
+            <p>The audit, plus one ready-to-merge PR with the fixes (following your CONTRIBUTING rules), plus the CI check set up on your repo. Up to 150 pages. Delivered in 4 business days.</p>
+          </article>
+          <article class="card">
+            <h3>Docs CI · US$49/month</h3>
+            <p>The check maintained on your repo, any size of docs site. Cancel any time.</p>
+          </article>
+        </div>
+        <p class="fine">Larger sites: US$1 per page above 150, or an Audit + Fix scoped to your highest-traffic sections, always quoted up front. Guarantee: if an audit of a docs set over 50 pages finds fewer than 5 verified defects, it's free.</p>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <h2 id="faq-title">FAQ</h2>
+        <details>
+          <summary>Can't we just run our docs platform's link checker?</summary>
+          <p>You can, and it's worth turning on. Some checks, such as anchor checking, are opt-in, which is how these breaks slip through. What we add: each finding confirmed on the live site, the fixes done as a PR, code-sample checks, and a CI gate that only fails on new breaks.</p>
+        </details>
+        <details>
+          <summary>What access do you need?</summary>
+          <p>For public docs, none: the repo and the published site are enough. For private docs, read access to the docs repository.</p>
+        </details>
+        <details>
+          <summary>Do you rewrite our docs?</summary>
+          <p>No. The packages cover links, anchors, images and code-sample syntax, plus a manual read of your top 10 pages. Content and product design stay yours.</p>
+        </details>
+        <details>
+          <summary>How do I pay?</summary>
+          <p>By invoice after you accept the quote, by card or bank transfer. Prices are in US dollars.</p>
+        </details>
+        <details>
+          <summary>Who runs it?</summary>
+          <p>DocuSwarm QA is a service of Fable &amp; Fuse Studios (ABN 20448337804), Australia. Contact: <a href="mailto:FableFuseStudios@proton.me?subject=DocuSwarm%20QA">FableFuseStudios@proton.me</a>.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <p><a href="../">Fable &amp; Fuse Studios</a> · <a href="../switchboard/">Switchboard</a> · <a href="mailto:FableFuseStudios@proton.me">FableFuseStudios@proton.me</a></p>
+      <p>© 2026 Fable &amp; Fuse Studios. Project names are used only to identify public contributions; no endorsement is implied.</p>
+    </div>
+  </footer>
+</body>
+</html>
