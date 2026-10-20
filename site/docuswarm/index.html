@@ -26,17 +26,17 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="top">
+  <header class="top top--enquiry">
     <div class="wrap top__inner">
-      <a class="brand" href="../" aria-label="Fable &amp; Fuse Studios home">
+      <div class="brand">
         <img src="../assets/img/fable-and-fuse-studios-logo-v2-320.webp" width="40" height="40" alt="">
         <span>Fable &amp; Fuse Studios</span>
-      </a>
+      </div>
       <nav aria-label="DocuSwarm QA">
         <a href="#proof">Proof</a>
         <a href="#packages">Packages</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn--small" href="mailto:FableFuseStudios@proton.me?subject=DocuSwarm%20QA%20audit">Request an audit</a>
+        <a class="btn btn--small" href="mailto:FableFuseStudios@proton.me?subject=DocuSwarm%20QA%20audit"><span class="cta-label--desktop">Email an audit enquiry</span><span class="cta-label--mobile">Email enquiry</span></a>
       </nav>
     </div>
   </header>
@@ -49,9 +49,10 @@
         <p class="lede">Every broken link in your docs, confirmed on your live site and fixed in one PR.</p>
         <p>Docs rot quietly. A heading gets renamed and six pages now link to an anchor that no longer exists, so readers land at the top of the wrong page. Nobody files a bug; they just leave. DocuSwarm QA finds these, checks each one by loading your published site, and hands you the fixes.</p>
         <div class="hero__cta">
-          <a class="btn btn--large" href="mailto:FableFuseStudios@proton.me?subject=DocuSwarm%20QA%20audit">Request an audit · from US$149</a>
+          <a class="btn btn--large" href="mailto:FableFuseStudios@proton.me?subject=DocuSwarm%20QA%20audit">Email an audit enquiry</a>
           <a class="btn btn--ghost" href="#packages">See packages</a>
         </div>
+        <p class="fine enquiry-help">Opens your email app. If it does not open, copy <span class="contact-address">FableFuseStudios@proton.me</span> into your email service. An enquiry does not place an order.</p>
         <p class="fine">Send your docs repo URL. You get a quote up front and pay only after you accept it.</p>
       </div>
     </section>
@@ -102,7 +103,7 @@
           </article>
           <article class="card">
             <h3>Docs CI · US$49/month</h3>
-            <p>The check maintained on your repo, any size of docs site. Cancel any time.</p>
+            <p>The check maintained on your repo, any size of docs site. This is a recurring monthly service. Cancel any time by email, effective at the end of your current paid month, with no further monthly charges. <a href="#cancellation">Billing, cancellation and refund details</a>.</p>
           </article>
         </div>
         <p class="fine">Larger sites: US$1 per page above 150, or an Audit + Fix scoped to your highest-traffic sections, always quoted up front. Guarantee: if an audit of a docs set over 50 pages finds fewer than 5 verified defects, it's free.</p>
@@ -127,6 +128,13 @@
         <details>
           <summary>How do I pay?</summary>
           <p>By invoice after you accept the quote, by card or bank transfer. Prices are in US dollars.</p>
+          <p>Enquiries do not place an order or start a subscription. Before you agree to proceed, we will confirm the scope, price, currency, applicable taxes, payment schedule, delivery date and cancellation/refund terms in writing.</p>
+        </details>
+        <details id="cancellation">
+          <summary>How do Docs CI billing and cancellation work?</summary>
+          <p>Docs CI is US$49 per month. Your written quote confirms the billing dates and any applicable taxes before you agree to start. To cancel, email <a href="mailto:FableFuseStudios@proton.me?subject=Docs%20CI%20cancellation">FableFuseStudios@proton.me</a> with the business or repository name used for your service. No passwords or payment details are needed.</p>
+          <p>Cancellation takes effect at the end of the current paid monthly period. Maintenance continues until that date, and there are no further monthly charges. We will confirm the cancellation and end date by email.</p>
+          <p>The current paid month is not refunded for a change of mind because service continues to its end. Any unused future monthly periods paid in advance will be refunded. This policy does not limit your rights to a refund or other remedy under Australian Consumer Law or other applicable mandatory consumer law.</p>
         </details>
         <details>
           <summary>Who runs it?</summary>
@@ -138,7 +146,13 @@
 
   <footer class="foot">
     <div class="wrap foot__inner">
-      <p><a href="../">Fable &amp; Fuse Studios</a> · <a href="../switchboard/">Switchboard</a> · <a href="mailto:FableFuseStudios@proton.me">FableFuseStudios@proton.me</a></p>
+      <nav aria-label="Studio products and services">
+        <a href="../">Brainrot Colour Chaos book</a> ·
+        <a href="../tiktok-ad-starter-pack/">TikTok Ad Starter Pack</a> ·
+        <a href="../switchboard/">Switchboard</a> ·
+        <a href="../docuswarm/">DocuSwarm QA</a>
+      </nav>
+      <p><a href="mailto:FableFuseStudios@proton.me">FableFuseStudios@proton.me</a></p>
       <p>© 2026 Fable &amp; Fuse Studios. Project names are used only to identify public contributions; no endorsement is implied.</p>
     </div>
   </footer>
